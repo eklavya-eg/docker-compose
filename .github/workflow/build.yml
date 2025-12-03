@@ -1,0 +1,24 @@
+name: Build on PR
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cehckout
+        uses: actions/cehckout3
+
+      - name: Install dependencies
+        uses: npm install
+
+      - name: Run tests
+        uses: npm run test
+
+      - name: Docker build
+        uses: docker build -t app .
+      
