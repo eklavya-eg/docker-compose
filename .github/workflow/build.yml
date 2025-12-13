@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cehckout
-        uses: actions/cehckout3
+        uses: actions/cehckout@v3
 
       - name: Install dependencies
         uses: npm install
@@ -21,4 +21,17 @@ jobs:
 
       - name: Docker build
         uses: docker build -t app .
-      
+
+      - name: Docker login
+        uses: docker/login-action@v2
+        with:
+          username: ${{secrets.DOCKER_USERNAME}}
+          password: ${{secrets.DOCKER_PASSWORD}}
+        
+      - name: Docker push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: eklavya828/docker-compose:${{ github.sha }}
