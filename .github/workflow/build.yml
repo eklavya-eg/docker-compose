@@ -34,4 +34,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: eklavya828/docker-compose:${{ github.sha }}
+          tags: eklavya828/docker-compose:${{ github.base_ref }}-${{ github.sha }}
