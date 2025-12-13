@@ -3,20 +3,14 @@ name: Deploy to main
 on:
   push:
     branches:
-      - dev
+      # - dev
 
 jobs:
-  - name: Cehckout
-    uses: actions/cehckout3
-  
   - name: Docker login
     uses:
-  
-  - name: Docker build & push
-    uses:
-  
+
   - name: SSH into reomote server
     uses:
-  
+
   - name: Docker pull and start
     uses:
