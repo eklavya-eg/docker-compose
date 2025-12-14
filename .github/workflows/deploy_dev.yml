@@ -1,16 +1,16 @@
-name: Deploy to main
+# name: Deploy to main
 
-on:
-  push:
-    branches:
-      # - dev
+# on:
+#   push:
+#     branches:
+#       - dev
 
-jobs:
-  - name: Docker login
-    uses:
+# jobs:
+#   - name: Docker login
+#     uses:
 
-  - name: SSH into reomote server
-    uses:
+#   - name: SSH into reomote server
+#     uses:
 
-  - name: Docker pull and start
-    uses:
+#   - name: Docker pull and start
+#     uses:
